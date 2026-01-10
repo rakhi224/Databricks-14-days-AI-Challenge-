@@ -1,0 +1,40 @@
+Data Loading & Core Transformations
+
+The e-commerce dataset was ingested into Databricks using Spark’s structured API.
+
+df = spark.read.csv("/Volumes/workspace/ecommerce/ecommerce_data/2019-Oct.csv")
+df.show()
+
+The raw CSV file was initially loaded to validate accessibility and inspect unstructured content.
+Subsequently, the dataset was reloaded with schema inference and header recognition to enable structured analytics.
+
+events = spark.read.csv("/Volumes/workspace/ecommerce/ecommerce_data/2019-Oct.csv",header=True, inferSchema=True)
+
+Exploratory & Analytical Operations
+Column Projection
+events.select("event_type", "product_id", "price").show(10)
+
+
+Selected business-critical columns to analyze customer interaction types, product identifiers, and pricing.
+
+Price-Based Filtering
+events.filter("price > 100").count()
+
+
+Filtered premium-priced products to quantify high-value transactional activity.
+
+Event Distribution Analysis
+events.groupBy("event_type").count().show()
+
+
+Aggregated user behavior by event category to understand interaction distribution across the platform.
+
+Top Brand Identification
+top_brands = events.groupBy("brand").count().orderBy("count", ascending=False).limit(5)
+
+
+Ranked brands by transaction frequency to identify top-performing brands within the dataset.
+
+Outcome
+
+These transformations establish a structured analytical layer that supports customer behavior analysis, revenue segmentation, and brand performance evaluation using Spark’s distributed execution engine.
