@@ -5,6 +5,11 @@ The objective of this challenge is to build practical data engineering and busin
 
 
 
+
+
+
+
+
 Databricks Day 4 – Delta Lake Introduction
 
 Databricks 14 Days AI Challenge | #DatabricksWithIDC
@@ -13,12 +18,16 @@ This repository documents my hands-on work for Day 4 of the Databricks 14 Days A
 
 The objective of this exercise was to move beyond raw file-based analytics and implement production-ready data engineering practices that ensure clean, trustworthy data before it is used for reporting, dashboards, and business decision-making.
 
+
 What This Project Covers
+
 1. Converting Raw CSV to Delta Format
 
 Loaded e-commerce CSV datasets into Spark DataFrames
 
 Converted raw file-based storage into Delta tables for improved reliability and performance
+
+
 
 2. Creating Delta Tables (SQL & PySpark)
 
@@ -30,11 +39,15 @@ PySpark DataFrame APIs
 
 Established structured and queryable datasets for analytics workloads
 
+
+
 3. Schema Enforcement & Data Protection
 
 Implemented schema enforcement to prevent invalid or mismatched data from entering tables
 
 Tested schema mismatch scenarios to understand real-world data quality failures
+
+
 
 4. Handling Duplicate Inserts
 
@@ -45,6 +58,8 @@ Implemented MERGE (UPSERT) operations to safely update existing records and inse
 Why This Matters for Business Analytics
 
 Reliable analytics depends on reliable data foundations.
+
+
 This project demonstrates how modern organizations:
 
 Prevent incorrect data from corrupting dashboards
